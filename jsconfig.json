@@ -1,4 +1,7 @@
 {
+  "include": [
+    "lib/**/*.js" // Include all JavaScript files in the lib directory, recursively
+  ],    
   "exclude": [
     "node_modules",
     "android",

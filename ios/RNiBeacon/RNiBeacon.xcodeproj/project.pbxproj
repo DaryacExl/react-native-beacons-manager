@@ -12,6 +12,7 @@
 		80B8DD5E2057BB4900CB79DC /* ESSEddystone.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B8DD582057BB4700CB79DC /* ESSEddystone.m */; };
 		80B8DD5F2057BB4900CB79DC /* ESSBeaconScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B8DD592057BB4700CB79DC /* ESSBeaconScanner.m */; };
 		80B8DD602057BB4900CB79DC /* ESSTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B8DD5D2057BB4800CB79DC /* ESSTimer.m */; };
+		A653EFCA2BAC74A3008CD314 /* RNBluetoothStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A653EFC92BAC74A3008CD314 /* RNBluetoothStateManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,8 @@
 		80B8DD5B2057BB4800CB79DC /* ESSEddystone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSEddystone.h; sourceTree = "<group>"; };
 		80B8DD5C2057BB4800CB79DC /* ESSTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESSTimer.h; sourceTree = "<group>"; };
 		80B8DD5D2057BB4800CB79DC /* ESSTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESSTimer.m; sourceTree = "<group>"; };
+		A653EFC82BAC7460008CD314 /* RNBluetoothStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNBluetoothStateManager.h; sourceTree = "<group>"; };
+		A653EFC92BAC74A3008CD314 /* RNBluetoothStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNBluetoothStateManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 		0D03EBD51E56B1E600C55E6B = {
 			isa = PBXGroup;
 			children = (
+				A653EFC72BAC7421008CD314 /* RNBTStateManager */,
 				0D03EBE01E56B1E700C55E6B /* RNiBeacon */,
 				0D03EBDF1E56B1E700C55E6B /* Products */,
 			);
@@ -79,6 +83,15 @@
 				0D03EBE21E56B1E700C55E6B /* RNiBeacon.m */,
 			);
 			path = RNiBeacon;
+			sourceTree = "<group>";
+		};
+		A653EFC72BAC7421008CD314 /* RNBTStateManager */ = {
+			isa = PBXGroup;
+			children = (
+				A653EFC82BAC7460008CD314 /* RNBluetoothStateManager.h */,
+				A653EFC92BAC74A3008CD314 /* RNBluetoothStateManager.m */,
+			);
+			path = RNBTStateManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +135,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 0D03EBD51E56B1E600C55E6B;
@@ -142,6 +156,7 @@
 				0D03EBE31E56B1E700C55E6B /* RNiBeacon.m in Sources */,
 				80B8DD602057BB4900CB79DC /* ESSTimer.m in Sources */,
 				80B8DD5F2057BB4900CB79DC /* ESSBeaconScanner.m in Sources */,
+				A653EFCA2BAC74A3008CD314 /* RNBluetoothStateManager.m in Sources */,
 				80B8DD5E2057BB4900CB79DC /* ESSEddystone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
