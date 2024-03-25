@@ -153,6 +153,9 @@ declare module 'react-native-beacons-manager' {
     ): void;
   }
 
+  const beacons: Beacons;
+  export default beacons;
+
   export type BluetoothState =
       | 'Unknown'
       | 'Resetting'
