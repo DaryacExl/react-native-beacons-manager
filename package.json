@@ -81,7 +81,7 @@
   },
   "peerDependencies": {
     "react": ">=15.4.2",
-    "react-native": ">= 0.44"
+    "react-native": ">= 0.44",
     "prop-types": "*"
   },
   "prettier": "@patwoz/prettier-config"
