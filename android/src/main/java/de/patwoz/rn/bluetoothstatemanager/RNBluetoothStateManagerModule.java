@@ -23,7 +23,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RNBluetoothStateManagerModule {
+public class RNBluetoothStateManagerModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
@@ -55,12 +55,19 @@ public class RNBluetoothStateManagerModule {
     this.removeRequestToEnableListener();
   }
 
+  @Override
+  public String getName() {
+    return "RNBluetoothStateManager";
+  }
+
+  @Override
   public Map<String, Object> getConstants() {
     final Map<String, Object> constants = new HashMap<>();
     constants.put("EVENT_BLUETOOTH_STATE_CHANGE", EVENT_BLUETOOTH_STATE_CHANGE);
     return constants;
   }
 
+  @Override
   public void onCatalystInstanceDestroy() {
     super.onCatalystInstanceDestroy();
     this.destroy();
@@ -69,7 +76,7 @@ public class RNBluetoothStateManagerModule {
   // --------------------------------------------------------------------------------------------- -
   // BLUETOOTH STATE
 
-  //@ReactMethod
+  @ReactMethod
   public void getState(Promise promise) {
     if (this.handleIfBluetoothNotSupported(promise, false)) {
       promise.resolve(Constants.BluetoothState.UNSUPPORTED);
@@ -93,7 +100,7 @@ public class RNBluetoothStateManagerModule {
     }
   }
 
-  //@ReactMethod
+  @ReactMethod
   public void enable(Promise promise) {
     if (this.handleIfBluetoothNotSupported(promise)) { return; }
     Activity currentActivity = this.handleCurrentActivity(promise);
@@ -107,13 +114,13 @@ public class RNBluetoothStateManagerModule {
     }
   }
 
-  //@ReactMethod
+  @ReactMethod
   public void addListener(String eventName) {}
 
-  //@ReactMethod
+  @ReactMethod
   public void removeListeners(Integer count) {}
 
-  //@ReactMethod
+  @ReactMethod
   public void disable(Promise promise) {
     if (this.handleIfBluetoothNotSupported(promise)) { return; }
     Activity currentActivity = this.handleCurrentActivity(promise);
@@ -130,7 +137,7 @@ public class RNBluetoothStateManagerModule {
   // --------------------------------------------------------------------------------------------- -
   // OPEN SETTINGS
 
-  //@ReactMethod
+  @ReactMethod
   public void openSettings(Promise promise) {
     if (this.handleIfBluetoothNotSupported(promise)) { return; }
     Activity currentActivity = this.handleCurrentActivity(promise);
@@ -180,7 +187,7 @@ public class RNBluetoothStateManagerModule {
     this.requestToEnablePromise = null;
   }
 
-  //@ReactMethod
+  @ReactMethod
   public void requestToEnable(Promise promise) {
     Activity currentActivity = this.handleCurrentActivity(promise);
     if (currentActivity == null) { return; }
