@@ -1,3 +1,5 @@
+import { EventSubscription } from 'react-native';
+
 declare module 'react-native-beacons-manager' {
 
   export interface BeaconRegion {
@@ -14,7 +16,7 @@ declare module 'react-native-beacons-manager' {
     | 'notDetermined'
     | 'restricted';
 
-  class Beacons {
+  export class Beacons {
     ///////////////////////////////////////////////////////
     // iOS only
     ///////////////////////////////////////////////////////
@@ -153,4 +155,24 @@ declare module 'react-native-beacons-manager' {
 
   const beacons: Beacons;
   export default beacons;
+
+  export type BluetoothState =
+      | 'Unknown'
+      | 'Resetting'
+      | 'Unsupported'
+      | 'Unauthorized'
+      | 'PoweredOff'
+      | 'PoweredOn';
+
+  export class BluetoothStateManager {
+    static getState(): Promise<BluetoothState>;
+    static onStateChange(
+      listener: (bluetoothState: BluetoothState) => void,
+      emitCurrentState: boolean
+    ): EventSubscription;
+    static openSettings(): Promise<null>;
+    static requestToEnable(): Promise<boolean>;
+    static enable(): Promise<null>;
+    static disable(): Promise<null>;
+  }
 }
